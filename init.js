@@ -16,7 +16,7 @@
     $(function() {
         codiad.Complete.init();
     });
-
+    
     codiad.Complete = {
         
         path        : curpath,
@@ -121,7 +121,7 @@
                 
                 if (this.__onKeyUpEnabled()) {
                     $('.editor').keyup(function(e){
-                        if (e.which >= 48 && e.which <= 90) {
+                        if (!e.ctrlKey && e.which >= 48 && e.which <= 90) {
                             _this.suggest();
                         } 
                     });
@@ -506,7 +506,7 @@
         //
         //////////////////////////////////////////////////////////
         goRight: function() {
-            this.complete();
+            this.hide();
         },
         
         //////////////////////////////////////////////////////////
